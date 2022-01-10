@@ -30,3 +30,4 @@ Comandos:
 - `yarn -v` ==> Checa a versão do nodeJS instalado
 - `yarn create react-app frontend --template typescript` ==> Cria o projeto react com o template usando typescript na pasta frontend
 - `yarn start` ==> Executa o projeto
+- `yarn add react-router-dom@6.2.1 @types/react-router-dom@5.3.2` ==> Instalação da biblioteca que ajuda na construção das rotas dentro do site
