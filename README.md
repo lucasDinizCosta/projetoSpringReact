@@ -41,3 +41,6 @@ Comandos:
 - URL para acessar o banco de dados com o 'h2': `http://localhost:8090/h2-console`
   - Na tela de login do 'h2' colocar os mesmos dados presente no arquivo `application-test.properties`
   - O banco de dados 'h2' é atualizado automaticamente de acordo com o que estiver no script `import.sql`
+  - Consulta com 12 elementos no Spring com REST: `http://localhost:8090/movies?size=12` 
+  - Mudando a pagina(da pagina 0 para a 1) na consulta Spring com REST: `http://localhost:8090/movies?size=12&page=1`
+  - Buscando um movie especifico no Spring com REST: `http://localhost:8090/movies/2`
