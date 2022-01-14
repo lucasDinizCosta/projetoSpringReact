@@ -1,9 +1,13 @@
 package com.devsuperior.dsmovie.entites;
 
+import java.util.HashSet;
+import java.util.Set;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 // Especificações para que o JPA reconheça o modelo de entidade para
@@ -21,6 +25,10 @@ public class Movie {
 	private Double score;
 	private Integer count;
 	private String image;
+	
+	// Lista de notas do filme
+	@OneToMany(mappedBy = "id.movie")
+	private Set<Score> scores = new HashSet<>();
 
 	public Movie() { 
 	}
@@ -71,6 +79,14 @@ public class Movie {
 
 	public void setImage(String image) {
 		this.image = image;
+	}
+
+	public Set<Score> getScores() {
+		return scores;
+	}
+
+	public void setScores(Set<Score> scores) {
+		this.scores = scores;
 	}
 	
 	
