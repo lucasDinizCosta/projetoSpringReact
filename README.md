@@ -44,3 +44,12 @@ Comandos:
   - Consulta com 12 elementos no Spring com REST: `http://localhost:8090/movies?size=12` 
   - Mudando a pagina(da pagina 0 para a 1) na consulta Spring com REST: `http://localhost:8090/movies?size=12&page=1`
   - Buscando um movie especifico no Spring com REST: `http://localhost:8090/movies/2`
+- Erro grave no PostgreSQL:
+  - `could not connect to server: Connection refused (0x0000274D/10061) Is the server running on host "localhost" (::1) and accepting TCP/IP connections on port 5433? could not connect to server: Connection refused (0x0000274D/10061) Is the server running on host "localhost" (127.0.0.1) and accepting TCP/IP connections on port 5433?`
+    - Verifique no arquivo `postgresql.conf` se o comando `port` está com o mesmo valor da configuração dentro do `pgAdmin` em Servers/PostgreSQL (Apertar botão direito do mouse, ir properties e ir em connection e verificar a port). Caso estiver diferente, coloque o mesmo valor da porta e caso for iguais, tente mudar ambos os valores para ver se o erro desaparece.
+    - Pressione a tecla <b>win+R</b> Procure por `services.msc` Uma janela será aberta para encontrar `postgresql-x64-13` e abra pare o processo e inicie novamente
+    - Arquivos extremamente importantes para ficar de olho caso der erros:
+      - `postgresql.conf`
+      - `pg_hba.conf`
+  - Quando houver erros graves nas configurações do pgAdmin:
+    - Remova todos os conteúdo presente na pasta `C:\Users\lucas\AppData\Roaming\pgAdmin` e inicie o pgAdmin novamente.
