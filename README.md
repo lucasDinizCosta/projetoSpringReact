@@ -44,6 +44,7 @@ Comandos:
       - React;
     - Hospedagem:
       - Netlify;
+    - Link: https://lucas-dsmovie-portfolio.netlify.app/
   - Backend:
     - Implementação:
       - Java (versão 17 -- Azul Zulu Builds of OpenJDK);
@@ -51,11 +52,28 @@ Comandos:
       - PostgreSQL 12 e pgAdmin 4 (Banco de dados);
     - Hospedagem:
       - Heroku;
+    - Link: https://lucas-dsmovie-portfolio.herokuapp.com/
   - Outras ferramentas:
     - Git (Versionamento do projeto);
       - Armazenado no github;
     - Postman (Utilizar envios REST com HTTP para testar a aplicação);
     - VSCode (Editor de texto);
+- Requisições feitas no postman:
+  - Requisições GET:
+    - Movies: Filtra na primeira pagina com 12 elementos
+      - http://localhost:8090/movies?size=12&page=0
+    - Movie by id: Pega o filme 1 a partir do id dele
+      - http://localhost:8090/movies/1
+  - Requisições PUT:
+    - Score: Adicionar uma nota de avaliação para um filme
+      - Corpo da requisição do formulário JSON:
+```JSON
+{
+    "movieId": 1,
+    "email": "rodrigo@gmail.com",
+    "score": 5
+}
+```
 - O banco de dados utilizados em memória para testar a parte do backend é o 'h2'
 - As configurações dele são adicionadas em modo test em application.properties e são 'spring.profiles.active=test' para teste
 - Erro na ferramenta de Spring Boot: "Identify and stop the process that's listening on port 8080 or configure this application to listen on another port."
@@ -89,4 +107,5 @@ Comandos:
 - No postgres após configurar o HEROKU será necessário criar um outro servidor colocando as informações da variável de ambiente `DATABASE_URL` e no campo advanced colocar o nome da base de dados novamente.
   - A base sincronizada com o heroku não terá tabelas dos dados, para isso agora deve ser inserido os dados do script `create.sql` para que a base esteja com os dados
 - O arquivo `system.properties` com a versão do java é EXTREMAMENTE importante para o HEROKU pois na hora que está fazendo 'subtree' ele faz o download de algumas bibliotecas com base nessa versão
-- O arquivo `./public/_redirects` é fundamental para a parte frontend no Netlify pois ajuda o site a saber os redirecionamentos para formulario e outras páginas, do contrario sem ele, a pagina não saberá pra onde ser redirecionado ao clicar em um formulario, por exemplo.
+- O arquivo `./public/_redirects` é fundamental para a parte frontend no Netlify pois ajuda o site a saber os redirecionamentos para formulário e outras páginas, do contrario sem ele, a pagina não saberá pra onde ser redirecionado ao clicar em um formulário, por exemplo.
+- Para iniciar somente o frontend isoladamente basta estar com o terminal na pasta do frontend e executar `yarn start`

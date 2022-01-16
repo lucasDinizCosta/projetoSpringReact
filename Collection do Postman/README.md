@@ -1,0 +1,1 @@
+# Arquivo JSON com as configs para testar a aplicação usando REST

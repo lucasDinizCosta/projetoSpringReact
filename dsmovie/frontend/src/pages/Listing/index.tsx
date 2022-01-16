@@ -1,7 +1,16 @@
-import Pagination from "components/Pagination";
+import axios from "axios";
 import MovieCard from "components/MovieCard";
+import Pagination from "components/Pagination";
+import { BASE_URL } from "utils/request";
 
 function Listing(){
+    // Forma ERRADA ===> Vem 2 requisições
+    axios.get(`${BASE_URL}/movies?size=12&page=0`)
+        .then(response => {
+            console.log(response.data);
+        });
+
+
     return (
         // Por padrão o react só aceita que retorne 1 elemento, para contornar isso pode se
         // adicionar os elementos em uma div, contudo, ocupará espaço no HTML
