@@ -109,3 +109,5 @@ Comandos:
 - O arquivo `system.properties` com a versão do java é EXTREMAMENTE importante para o HEROKU pois na hora que está fazendo 'subtree' ele faz o download de algumas bibliotecas com base nessa versão
 - O arquivo `./public/_redirects` é fundamental para a parte frontend no Netlify pois ajuda o site a saber os redirecionamentos para formulário e outras páginas, do contrario sem ele, a pagina não saberá pra onde ser redirecionado ao clicar em um formulário, por exemplo.
 - Para iniciar somente o frontend isoladamente basta estar com o terminal na pasta do frontend e executar `yarn start`
+- No Netlify onde será hospedado o frontend será adicionado a seguinte variável de ambiente `REACT_APP_BACKEND_URL` e partir dela que será preenchido com o endereço URL do frontend no Heroku, e assim, estabelecendo a comunicação:
+  - `frontend <=> backend`
