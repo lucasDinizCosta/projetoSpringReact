@@ -24,7 +24,8 @@ function Listing(){
     });
 
     // definindo a hook do useEffect
-    // ==> Executa somente quando o componente é totalmente carregado
+    // ==> Executa somente quando o componente é carregado ou modificado
+    // ==> Este listener fica observando as mudanças em pageNumber
     useEffect(() => {
         axios.get(`${BASE_URL}/movies?size=${page.size}&page=${pageNumber}`)
         .then(response => {
@@ -49,12 +50,16 @@ function Listing(){
     //     score: 4.5
     // };
 
+    const handlePageChange = (newPageNumber: number) => {
+        setPageNumber(newPageNumber);
+    }
+
     return (
         // Por padrão o react só aceita que retorne 1 elemento, para contornar isso pode se
         // adicionar os elementos em uma div, contudo, ocupará espaço no HTML
         // ou em uma tag vazia <>ELEMENTOS AQUI</>
         <>
-            <Pagination />
+            <Pagination page={page} onChange={handlePageChange}/>
             <div className="container">
                 <div className="row">
                     {
