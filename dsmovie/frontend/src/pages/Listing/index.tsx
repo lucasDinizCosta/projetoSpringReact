@@ -27,7 +27,7 @@ function Listing(){
     // ==> Executa somente quando o componente é carregado ou modificado
     // ==> Este listener fica observando as mudanças em pageNumber
     useEffect(() => {
-        axios.get(`${BASE_URL}/movies?size=${page.size}&page=${pageNumber}`)
+        axios.get(`${BASE_URL}/movies?size=12&page=${pageNumber}`)
         .then(response => {
             const data = response.data as MoviePage;
             setPage(data);
@@ -71,7 +71,6 @@ function Listing(){
                             </div>
                         ))
                     }
-                    
                 </div>
             </div>
         </>
